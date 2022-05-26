@@ -57,7 +57,7 @@ export const appearAnimation = {
             duration: 0.5
         },
     }),
-}
+};
 
 export const rotateAnimation = {
     animate: {
@@ -71,4 +71,4 @@ export const rotateAnimation = {
             repeatDelay: 1
         }
     }
-}
+};

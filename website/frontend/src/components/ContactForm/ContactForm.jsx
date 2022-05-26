@@ -6,36 +6,39 @@ import ContentBlock from "../ContentBlock/ContentBlock";
 import AnimatedButton from "../UI/AnimatedButton/AnimatedButton";
 import Separator from "../UI/Separator/Separator";
 import Highlighted from "../UI/Highlighted/Highlighted";
+import useInput from "../../hooks/useInput";
 
 import {appearAnimation} from "../../constants";
 
 import styles from "./ContactForm.module.css";
 
-const initialInput = {
-    "name": "",
-    "question": "",
-    "phone_number": "",
-    "email": "",
-}
-
 const ContactForm = () => {
-    const [inputState, setInputState] = useState(initialInput)
+    const [checkState, setCheckState] = useState(false);
 
-    const handleChange = (e) => {
-        const {name, value} = e.target
-
-        setInputState({...inputState, [name]: value})
-    };
+    const emailInput = useInput("");
+    const nameInput = useInput("");
+    const phoneInput = useInput("");
+    const questionInput = useInput("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('/api/create-question', {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(inputState)
-        }).then(response => console.log(response.json()));
+
+        if (checkState) {
+            if (!nameInput.errorMessage && !emailInput.errorMessage && !phoneInput.errorMessage) {
+                fetch('/api/create-question', {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: emailInput.value,
+                        name: nameInput.value,
+                        phone_number: phoneInput.value,
+                        question: questionInput.value
+                    })
+                }).then(response => console.log(response.json()));
+            }
+        }
     };
 
     return (
@@ -63,6 +66,21 @@ const ContactForm = () => {
                     </Highlighted>
                 </motion.h2>
                 <Separator/>
+                {nameInput.errorMessage && (
+                    <>
+                        <strong style={{ color: "red" }}>{nameInput.errorMessage}</strong><br/>
+                    </>
+                )}
+                {emailInput.errorMessage && (
+                    <>
+                        <strong style={{ color: "red" }}>{emailInput.errorMessage}</strong><br/>
+                    </>
+                )}
+                {phoneInput.errorMessage && (
+                    <>
+                        <strong style={{ color: "red" }}>{phoneInput.errorMessage}</strong><br/>
+                    </>
+                )}
                 <Form className={styles.form}>
                     <Row className="mb-3">
                         <motion.div
@@ -74,16 +92,16 @@ const ContactForm = () => {
                             variants={appearAnimation}
                         >
                             <Form.Group controlId="formName" className="m-3 mt-0">
-                                <Form.Control className={styles['form-control']} type="text" name="name" onChange={handleChange} placeholder="Ваше имя" required/>
+                                <Form.Control className={styles['form-control']} type="text" name="name" onChange={nameInput.onChange} onBlur={nameInput.onBlur} placeholder="Ваше имя" required/>
                             </Form.Group>
                             <Form.Group controlId="formNumber" className="m-3">
-                                <Form.Control className={styles['form-control']} type="text" name="phone_number" onChange={handleChange} placeholder="+7 (___) ___ __ __" required/>
+                                <Form.Control className={styles['form-control']} type="text" name="phone_number" onChange={phoneInput.onChange} onBlur={phoneInput.onBlur} placeholder="+7 (___) ___ __ __" required/>
                             </Form.Group>
                             <Form.Group controlId="formEmail" className="m-3">
-                                <Form.Control className={styles['form-control']} type="email" name="email" onChange={handleChange} placeholder="e-mail"/>
+                                <Form.Control className={styles['form-control']} type="email" name="email" onChange={emailInput.onChange} onBlur={emailInput.onBlur} placeholder="e-mail"/>
                             </Form.Group>
                             <Form.Group controlId="formCheckbox" className="m-3">
-                                <Form.Check className={styles['form-check-input']} type="checkbox" label="Я согласен с политикой конфиденциальности." required/>
+                                <Form.Check className={styles['form-check-input']} type="checkbox" onChange={() => {setCheckState(!checkState);}} label="Я согласен с политикой конфиденциальности." required/>
                             </Form.Group>
                         </motion.div>
                         <motion.div
@@ -95,7 +113,7 @@ const ContactForm = () => {
                             variants={appearAnimation}
                         >
                             <Form.Group controlId="FormText" className="h-100">
-                                <Form.Control className={styles['form-control']} as="textarea" name="question" onChange={handleChange} rows="10" placeholder="Ваш Вопрос"/>
+                                <Form.Control className={styles['form-control']} as="textarea" name="question" onBlur={questionInput.onBlur} rows="10" placeholder="Ваш Вопрос"/>
                             </Form.Group>
                         </motion.div>
                     </Row>
