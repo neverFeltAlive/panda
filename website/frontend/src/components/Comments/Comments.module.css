@@ -1,0 +1,42 @@
+.comments-block {
+    background-color: rgba(163, 201, 38, 0.2);
+    border: 2px solid #A3C926;
+    border-left: none;
+    border-right: none;
+}
+
+.card{
+    box-shadow: 5px 5px 15px 0 #A3C926;
+    border-radius: 0;
+    width: auto;
+}
+
+.card-dark{
+    box-shadow: 5px 5px 15px 0 #DAC16D;
+    background-color: rgba(218, 193, 109, 0.6);
+}
+
+.card-big{
+    max-width: 400px;
+}
+
+.text{
+    text-align: left;
+    border-top: 2px solid #40322F;
+}
+
+.text-muted{
+    color: rgba(64, 50, 47, 0.3);
+}
+
+@media screen and (min-width: 990px) {
+    .image{
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .image{
+        width: 0;
+    }
+}

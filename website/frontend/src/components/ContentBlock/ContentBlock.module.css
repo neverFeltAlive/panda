@@ -1,0 +1,35 @@
+.content-block {
+    width: 100%;
+    padding: 30px 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 15px 0 rgba(163, 201, 38, 0.6);
+}
+
+.content-block-container {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+@media screen and (max-width: 574px) {
+    .content-block{
+        padding: 30px 0;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .content-block{
+        padding: 50px 0;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .content-block{
+        padding: 100px 0;
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .content-block{
+        padding: 150px 0;
+    }
+}

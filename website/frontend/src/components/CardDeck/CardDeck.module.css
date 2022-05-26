@@ -1,0 +1,53 @@
+.card {
+    width: 400px;
+    height: 550px;
+}
+
+.card-inner{
+    box-shadow: 5px 5px 15px 0 rgba(163, 201, 38, 0.7);
+}
+
+.card-inner-even {
+    background-color: rgba(218, 183, 109, 0.6);
+    box-shadow: 5px 5px 15px 0 rgba(218, 183, 109, 0.8);
+}
+
+@media screen and (max-width: 574px) {
+    .card{
+        width: 250px;
+        height: 350px;
+    }
+    .image{
+        width: 250px;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .card{
+        width: 340px;
+        height: 440px;
+    }
+    .image{
+        width: 340px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .card{
+        width: 420px;
+        height: 460px;
+    }
+    .image{
+        width: 420px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .card{
+        width: 400px;
+        height: 500px;
+    }
+    .image{
+        width: 400px;
+    }
+}

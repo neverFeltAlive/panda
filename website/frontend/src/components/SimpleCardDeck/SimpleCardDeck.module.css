@@ -1,0 +1,39 @@
+.card {
+    background-color: rgba(163, 201, 38, 0.3);
+    box-shadow: 5px 5px 5px 0 #A3C926;
+}
+
+.card-dark{
+    background-color: rgba(218, 193, 109, 0.5);
+    box-shadow: 5px 5px 5px 0 #DAC16D;
+}
+
+.image{
+    box-shadow: 5px 5px 5px 0 #DAC16D;
+}
+
+.image-dark{
+    box-shadow: 5px 5px 5px 0 #A3C926;
+}
+
+
+@media screen and (max-width: 574px) {
+    .image{
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .image{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .image{
+        width: 140px;
+        height: 140px;
+    }
+}

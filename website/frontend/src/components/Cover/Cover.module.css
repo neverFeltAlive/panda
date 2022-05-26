@@ -1,0 +1,29 @@
+.cover{
+    max-width: 100%;
+}
+
+.particles-mask-image {
+    min-height: 100vh;
+
+    color: #40322F;
+
+    background-color: rgba(218, 193, 109, 0.3);
+    background-image: url("../../assets/logo-mask.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media screen and (min-width: 576px) {
+    .cover{
+        max-width: 540px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .cover{
+        max-width: 720px;
+    }
+}
+
+

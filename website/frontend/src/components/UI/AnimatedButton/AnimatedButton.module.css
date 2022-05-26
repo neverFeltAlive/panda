@@ -1,0 +1,30 @@
+.button {
+    color: #40322F;
+    text-decoration: none;
+    background-color: transparent;
+    border: 2px solid #40322F;
+    border-radius: 10px;
+}
+
+.button:focus{
+    outline: 0;
+}
+
+.button:hover {
+    color: #A3C926;
+    background-color: transparent;
+    border-color: #A3C926;
+    cursor: pointer;
+}
+
+.reverse{
+    color: #A3C926;
+    background-color: transparent;
+    border-color: #A3C926;
+}
+
+.reverse:hover{
+    color: #DAC16D;
+    background-color: transparent;
+    border-color: #DAC16D;
+}

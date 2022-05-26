@@ -1,0 +1,17 @@
+.icon{
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #DAC16D;
+    border: 5px solid #DAC16D;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    font-size: 40px;
+}
+
+@media screen and (max-width: 574px) {
+    .icon{
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+    }
+}

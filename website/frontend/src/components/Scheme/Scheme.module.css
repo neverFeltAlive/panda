@@ -1,0 +1,48 @@
+.scheme-container{
+    background-color: rgba(218, 193, 109, 0.9);
+    border-bottom: 2px solid rgba(64, 50, 47);
+    text-align: left;
+    padding: 100px;
+}
+
+
+@media screen and (max-width: 574px) {
+    .image {
+        width: 60px;
+        height: 60px;
+    }
+    .scheme-container{
+        padding: 50px;
+    }
+
+}
+
+@media screen and (min-width: 576px) {
+    .image {
+        width: 80px;
+        height: 80px;
+    }
+    .scheme-container{
+        padding: 60px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .image {
+        width: 100px;
+        height: 100px;
+    }
+    .scheme-container{
+        padding: 80px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .image {
+        width: 150px;
+        height: 150px;
+    }
+    .scheme-container{
+        padding: 100px;
+    }
+}

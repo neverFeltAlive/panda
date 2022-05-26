@@ -1,0 +1,48 @@
+.map-block {
+    background-color: rgba(218, 193, 109, 0.2);
+    box-shadow: 0 0 15px 0 rgba(218, 183, 109, 0.7);
+    border: 2px solid #DAC16D;
+    border-left: none;
+    border-right: none;
+}
+
+.map-container{
+    border: 2px solid rgba(218, 183, 109, 0.7);
+    opacity: 0.9;
+}
+
+.text-container{
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 5px 15px 0 rgba(218, 183, 109, 0.7);
+    width: 90%;
+}
+
+.text{
+    text-align: left;
+    border: 1px solid #A3C926;
+    box-shadow: 5px 5px 5px 0 #A3C926;
+}
+
+@media screen and (max-width: 576px) {
+    .map{
+        height: 300px;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .map{
+        height: 500px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .map{
+        height: 600px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .map{
+        height: 700px;
+    }
+}
